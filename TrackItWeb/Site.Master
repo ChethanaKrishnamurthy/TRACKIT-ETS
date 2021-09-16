@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TrackItWeb.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+    <link href="Images/logo.png" rel="shortcut icon">
+    <link href="Images/logo.png" rel="icon" type="image/x-icon">
+
+    <asp:PlaceHolder runat="server">
+      <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />   
+    
+    <style type="text/css">
+        body, html {
+            height: 100%;
+            background-color: white;
+        }
+
+        .Maindiv {
+            min-height: 700px;
+        }
+
+        .logo {
+            background-image: url('/Images/logo.png');
+            background-repeat: no-repeat;
+            background-size: 40px 40px;
+            background-position: 10px 20px 20px 20px;
+            height: 50px;
+            width: 50px;
+            float: left;
+            margin-left:20px
+        }
+
+        #range-logo {
+            display: block;
+            height: 100%;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .navbar {
+            background-color: #1d96c2;
+            align-items: stretch;           
+        }
+
+        .nav li a, .username, .navbar-text {
+            color: white !important; 
+             display:inline-table;                       
+                position: relative;
+        }
+             
+        nav ul {
+            display: block;
+            list-style-type: disc;
+            float:right;
+            margin-top:0;
+           }
+
+        nav ul li { 
+            list-style:none;            
+            margin:0;
+            padding:0;
+            float: right;                      
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #1d96c2;
+            color: white;
+            text-align: center;
+            height: 50px;
+            padding: 15px 0 0 0;
+            clear: both;
+        }
+        .NeedHelp {
+            float:right;
+            margin-right:50px;
+           
+        }
+        .NeedHelp a{
+            color:white
+        }
+        .CopyRight{
+            float:left;
+            padding-left:45%;
+        }
+        .WikiLink{
+             float:left;
+           padding-left:20%; 
+        }
+        .WikiLink a{
+            color:white           
+        }
+       .navbar-collapse {
+            float:none;
+            display:inline-block;
+            vertical-align: top;
+        }
+
+      </style>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">      
+            
+            <div class="logo">
+                <a href="Default.aspx" title="RMS Logo" id="range-logo"></a>
+            </div>
+
+            <div style="align-items:flex-start" class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>                   
+                </div>
+                <div class="navbar-collapse collapse">                  
+                     <ul class="nav navbar-nav">                     
+                        <li><a runat="server" id="TrackItLink" href="~/">TrackItETS</a></li>
+                        <li class="text-left"><a runat="server" id="ReportsLink" href="~/Report.aspx">Reports</a></li>
+                         <li class="text-left"><a runat="server" id="ManagerUpdateUserEntry" href="~/ManagerUpdateUserEntry.aspx">UserEntries</a></li>
+                        <li class="text-left"><a runat="server" id="AdminLink" href="~/Admin.aspx">Admin</a></li>
+                    </ul>
+                    <p class="nav navbar-text navbar-right">Hello, <asp:Label ID="lblLoggedInUser" Text="" runat="server"/> ! </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+             <footer class="footer" style="clear: both">
+              <div class="CopyRight">  <p>&copy; <%: DateTime.Now.Year %> - TrackItETS </p></div>
+                 <div class="WikiLink">  <p><a href="https://rmsrisk.atlassian.net/wiki/spaces/TRKETS/pages/809730103/TrackIt+-+Enterprise+Technology+Services" target="_blank">Wiki Link</a></p></div>
+                <div class="NeedHelp"><a href="mailto:TrackitETSsupport@rms.com"> Need Help?</a></div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

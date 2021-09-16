@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackItWeb", "TrackItWeb\TrackItWeb.csproj", "{8E945C8C-6648-45ED-B786-D809A7A242E2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEF40CD4-ACEC-4982-A60B-9BB9E4E1C232} = {FEF40CD4-ACEC-4982-A60B-9BB9E4E1C232}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysComponents", "SysComponents\SysComponents.csproj", "{FEF40CD4-ACEC-4982-A60B-9BB9E4E1C232}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E945C8C-6648-45ED-B786-D809A7A242E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E945C8C-6648-45ED-B786-D809A7A242E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E945C8C-6648-45ED-B786-D809A7A242E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E945C8C-6648-45ED-B786-D809A7A242E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEF40CD4-ACEC-4982-A60B-9BB9E4E1C232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEF40CD4-ACEC-4982-A60B-9BB9E4E1C232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEF40CD4-ACEC-4982-A60B-9BB9E4E1C232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEF40CD4-ACEC-4982-A60B-9BB9E4E1C232}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAC49AF4-F746-4F3E-AB54-21F879A14B03}
+	EndGlobalSection
+EndGlobal
